@@ -12,25 +12,36 @@
 <body>
     <main>
         <header id="heading">
-            
+            <div id="menu-bar"><i class="fas fa-bars"></i></div>
+            <h1 id="heading__header">Günüm</h1>
+            <p id="heading__date">14 Temmuz Çarşamba</p>
 
         </header>
 
 
 
         <article id="main-list">
-
+            <div class="task"><i class="far fa-circle"></i> Deneme Lorem ipsum dolor sit amet.<i class="far fa-trash-alt delete-sth" ></i></div>
+            
         </article>
 
 
 
 
         <footer id="add-task">
-
+            <div id="add-task__div">
+                <i class="fas fa-plus fa-white"></i>
+                <input type="text" name="task" id="task-input">
+                <div id="add-task__div__icons">
+                    <i class="fas fa-clipboard-check fa-white"> Tasks</i>
+                    <i class="far fa-calendar-alt fa-white"></i>
+                    <i class="far fa-clock fa-white" id="add-task-icon"></i>
+                </div>
+            </div>
         </footer>
     </main>
     <aside>
-        <div id="sidebar-heading" class="sidebar-item sidebar-item--heading">
+        <div id="sidebar-heading" class="sidebar-heading sidebar-item--heading">
             <h1 style="display: inline-block;">To Do App</h1>
             <div id="menu" style="display: inline-block;"><i class="fas fa-bars"></i></div>
         </div>
@@ -39,19 +50,19 @@
             <h3><i class="far fa-user-circle"></i>   Login <i class="fas fa-search" id="search-icon"></i></h3>
         </div>
         <div id="my-day" class="sidebar-item sidebar-item--my-day">
-            <h3><i class="fas fa-sun"></i> My Day</h3>
+            <h3><i class="fas fa-sun" colo></i> My Day</h3>
         </div>
         <div id="important" class="sidebar-item sidebar-item--important">
             <h3><i class="far fa-star"></i> Important</h3>
         </div>
         <div id="planned" class="sidebar-item sidebar-item--planned">
-            <h3><i class="far fa-calendar-alt"></i> Planned</h3>
+            <h3><i class="far fa-calendar-alt fa-calendar--colored"></i> Planned</h3>
         </div>
         <div id="asigned" class="sidebar-item sidebar-item--asigned">
             <h3><i class="fas fa-user-tag"></i> Asigned to Me</h3>
         </div>
         <div id="tasks" class="sidebar-item sidebar-item--tasks">
-            <h3><i class="fas fa-clipboard-check"></i> Tasks</h3>
+            <h3><i class="fas fa-clipboard-check fa-clipboard-check--colored"></i> Tasks</h3>
         </div>
         <hr>
         <div class="sidebar-list">
@@ -63,3 +74,6 @@
     </aside>
 </body>
 </html>
+
+<!-- <i class="far fa-circle"></i>
+<i class="far fa-check-circle"></i> -->

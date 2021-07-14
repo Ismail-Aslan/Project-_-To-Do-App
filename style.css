@@ -53,8 +53,10 @@ h3{
     margin-left: 5px;
     padding: 0.5%;
 }
-.sidebar-item:hover {
+.sidebar-item:hover,
+.fa-bars:hover {
     background-color: rgba(169, 169, 169, 0.233);
+    cursor: pointer;
 }
 
 #sidebar-heading,h1{
@@ -62,20 +64,122 @@ h3{
     margin: 0%;
     
 }
+.fa-sun{
+    color:goldenrod;
+}
+
+.fa-star{
+    color: red;
+}
+.fa-calendar--colored{
+    color: blue;
+}
+.fa-user-tag{
+    color: olivedrab;
+}
+.fa-clipboard-check--colored{
+    color: green;
+}
 
 /* Main section */
+main {
+    background: rgb(231,253,254);
+    background: linear-gradient(0deg, rgba(231,253,254,1) 0%, rgba(2,215,218,1) 100%);
+}
 
+/* Main header */
 #heading {
     grid-area: header;
-    background-color: royalblue;
+    background-color: skyblue;
+    height: min-content;
+}
+#menu-bar{
+    margin: 5px 5%;
+    margin-right: 5%;
+    border-radius: 15%;
+    background-color: rgba(128, 128, 128,0.5);
+    width: min-content;
+    padding: 3px 7px;
+    display: none;
 }
 
-#main-list {
-    grid-area: article;
-    background-color: saddlebrown;
+#heading__header {
+    margin: 1.5rem 5% 0.5rem 5%;
 }
+#heading__date{
+    margin: 0.5rem 5%;
+}
+
+
+/* Main article */
+#main-list {
+    grid-area: article;  
+    overflow: auto;
+}
+.task {
+    margin: 0.3rem 5%;
+    width: 90%;
+    padding: 0.4rem;
+    background-color: white;
+    border-radius: 5px;
+}
+.delete-sth{
+    float: right; 
+    color: rgba(0, 0, 0,0.7);
+}
+
+.delete-sth:hover{
+    cursor: pointer;
+    color: red;
+}
+
+
+
+
+
+
+
 
 #add-task {
     grid-area: footer;
-    background-color: skyblue;
+    
+}
+#add-task__div{
+    margin: 10px auto;
+    width: 80%;
+    background-color: rgba(0,0,0, 0.527);
+    padding: 0 0 0 8px  ;
+    max-height: min-content;
+    border-radius: 5px;
+}
+#task-input{
+    border: none;
+    background-color: rgba(0,0,0, 0);
+    width: 50%;
+    outline: none;
+    min-height: 50px;
+    
+}
+#add-task__div__icons{
+    float: right;
+    margin: 0%;
+    padding:0%;
+    
+}
+#add-task__div__icons > i{
+    padding: 16px 5px ;
+    align-self: center;
+    min-height: 50px;
+    
+}
+
+#add-task__div__icons > i:hover{
+    
+    background-color: rgba(0,0,0, 0.8);
+    cursor: pointer;
+}
+
+.fa-white {
+    color: white;
+    font-style: normal;
 }
