@@ -90,7 +90,7 @@ main {
 /* Main header */
 #heading {
     grid-area: header;
-    background-color: skyblue;
+    background-color: rgba(56, 113, 136, 0.103);
     height: min-content;
 }
 #menu-bar{
