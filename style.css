@@ -3,7 +3,7 @@
 }
 body {
     display: grid;
-    grid-template-columns: 4fr 7fr;
+    grid-template-columns: minmax(max-content, 2fr) 7fr;
     grid-template-rows: 100%;
     grid-template-areas: 
     "aside main";
@@ -14,6 +14,7 @@ aside{
     
     grid-area: aside;
     width: 100%;
+    
     height: 100vh;
     background-color: snow;
     border:1px solid rgba(128, 128, 128, 0.308)
@@ -24,7 +25,7 @@ main {
     height: 100vh;
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 15% 75% 10%;
+    grid-template-rows: 20% 70% 10%;
     grid-template-areas: 
     "header"
     "article"
@@ -34,10 +35,7 @@ h3{
     width: 100%;
     color: rgba(3, 3, 3, 0.829);
 }
-#search-icon{
-    float: right;
-    margin-right: 5%;
-}
+
 #menu {
     
     float: right;
@@ -91,7 +89,7 @@ main {
 #heading {
     grid-area: header;
     background-color: rgba(56, 113, 136, 0.103);
-    height: min-content;
+    height: 8rem;
 }
 #menu-bar{
     margin: 5px 5%;
@@ -115,8 +113,10 @@ main {
 #main-list {
     grid-area: article;  
     overflow: auto;
+  
 }
 .task {
+    
     margin: 0.3rem 5%;
     width: 90%;
     padding: 0.4rem;
@@ -155,7 +155,7 @@ main {
 #task-input{
     border: none;
     background-color: rgba(0,0,0, 0);
-    width: 50%;
+    width: 60%;
     outline: none;
     min-height: 50px;
     
@@ -164,7 +164,7 @@ main {
     float: right;
     margin: 0%;
     padding:0%;
-    
+    width: max-content;
 }
 #add-task__div__icons > i{
     padding: 16px 5px ;
