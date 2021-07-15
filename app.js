@@ -67,7 +67,7 @@ const newList = document.getElementById("new-list");
 const menuBar = document.getElementById("menu-bar");
 const headingHeader = document.getElementById("heading__header");
 const headingDate = document.getElementById("heading__date");
-const tasksMain = document.getElementsByClassName("task");
+const tasksMain = document.getElementById("main-list");
 const addTaskIcon = document.getElementsByClassName("fa-plus");
 const addTaskInput = document.getElementById("task-input");
 const addTaskTasks = document.getElementById("add-task__tasks");
@@ -101,7 +101,7 @@ menuBar.addEventListener('click',() => {
 
 myDay.addEventListener('click',() => {
     headingHeader.innerText = "My Day";
-    console.log(headingHeader.innerText);
+    // console.log(headingHeader.innerText);
     if ( headingHeader.innerText === "My Day") {
         myDay.style.backgroundColor = "rgba(169, 169, 169, 0.833)";
         importantSB.style.backgroundColor = "";
@@ -113,7 +113,7 @@ myDay.addEventListener('click',() => {
 
 importantSB.addEventListener('click',() => {
     headingHeader.innerText = "Important";
-    console.log(headingHeader.innerText);
+    // console.log(headingHeader.innerText);
     if ( headingHeader.innerText === "Important") {
         myDay.style.backgroundColor = "";
         importantSB.style.backgroundColor = "rgba(169, 169, 169, 0.833)";
@@ -125,7 +125,7 @@ importantSB.addEventListener('click',() => {
 
 planned.addEventListener('click',() => {
     headingHeader.innerText = "Planned";
-    console.log(headingHeader.innerText);
+    // console.log(headingHeader.innerText);
     if ( headingHeader.innerText === "Planned") {
         myDay.style.backgroundColor = "";
         importantSB.style.backgroundColor = "";
@@ -136,7 +136,7 @@ planned.addEventListener('click',() => {
 });
 asigned.addEventListener('click',() => {
     headingHeader.innerText = "Assigned to Me!";
-    console.log(headingHeader.innerText);
+    // console.log(headingHeader.innerText);
     if ( headingHeader.innerText === "Assigned to Me!") {
         myDay.style.backgroundColor = "";
         importantSB.style.backgroundColor = "";
@@ -147,12 +147,32 @@ asigned.addEventListener('click',() => {
 });
 tasks.addEventListener('click',() => {
     headingHeader.innerText = "Tasks";
-    console.log(headingHeader.innerText);
+    // console.log(headingHeader.innerText);
     if ( headingHeader.innerText === "Tasks") {
         myDay.style.backgroundColor = "";
         importantSB.style.backgroundColor = "";
         planned.style.backgroundColor = "";
         asigned.style.backgroundColor = "";
         tasks.style.backgroundColor = "rgba(169, 169, 169, 0.833)";
+    }
+});
+
+
+
+
+
+addTaskInput.addEventListener('keydown',function (event) {
+    if (event.key === "Enter") {
+        let newTask = document.createElement("div");
+        newTask.setAttribute('class','task');
+        let newFaCircle = document.createElement("i");
+        newFaCircle.setAttribute('class','far fa-circle');
+        let newFaTrash = document.createElement("i");
+        newFaTrash.setAttribute('class','far fa-trash-alt delete-sth');
+        tasksMain.append(newTask);
+        newTask.append(newFaCircle);
+        newTask.append(` ${addTaskInput.value}`)
+        newTask.append(newFaTrash);
+        console.log(tasksMain);
     }
 });
