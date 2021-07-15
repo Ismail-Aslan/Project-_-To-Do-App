@@ -1,3 +1,9 @@
+if (localStorage.getItem(`keyForTasks`) === null) {
+    localStorage.setItem(`keyForTasks`,0);
+}
+let keyOfTask;
+var dateNeed =new Date();
+
 // Adjusting date for app
 
 const dateOfToday =new Date();
@@ -160,19 +166,63 @@ tasks.addEventListener('click',() => {
 
 
 
+function adjustDate() {
+    keyOfTask = localStorage.getItem(`keyForTasks`);
+    localStorage.setItem(`keyForTasks`,`${Number(keyOfTask) + 1}`);
+    return  `${dateNeed.getUTCDate()}_${dateNeed.getMonth()}_${dateNeed.getFullYear()}_` + `${keyOfTask}` ;  
+}
 
 addTaskInput.addEventListener('keydown',function (event) {
     if (event.key === "Enter") {
-        let newTask = document.createElement("div");
-        newTask.setAttribute('class','task');
-        let newFaCircle = document.createElement("i");
-        newFaCircle.setAttribute('class','far fa-circle');
-        let newFaTrash = document.createElement("i");
-        newFaTrash.setAttribute('class','far fa-trash-alt delete-sth');
-        tasksMain.append(newTask);
-        newTask.append(newFaCircle);
-        newTask.append(` ${addTaskInput.value}`)
-        newTask.append(newFaTrash);
-        console.log(tasksMain);
+        if (addTaskInput.value !== "") {
+            
+            // const finalDate = `${dateOfToday.getUTCDate()}_${dateOfToday.getMonth()}_${dateOfToday.getFullYear()}_` + `${keyOfTask}` ;
+            const finalDate = adjustDate();
+            localStorage.setItem(`${finalDate}`,`${addTaskInput.value}`);
+            const itemTask = localStorage.getItem(`${finalDate}`);
+            const newTask = document.createElement("div");
+            newTask.setAttribute('class','task');
+            const newFaCircle = document.createElement("i");
+            newFaCircle.setAttribute('class','far fa-circle');
+            const newFaTrash = document.createElement("i");
+            newFaTrash.setAttribute('class','far fa-trash-alt delete-sth');
+            tasksMain.append(newTask);
+            newTask.append(newFaCircle);
+            newTask.append(` ${itemTask}`);
+            newTask.append(newFaTrash);
+            console.log(tasksMain);
+            
+            addTaskInput.value = "";
+        }
     }
+});
+
+addTaskTasks.addEventListener('click', () => {
+        if (document.getElementById("add-final-date").style.display === "block") {
+            document.getElementById("add-final-date").style.display = "none";
+        }else{
+        document.getElementById("add-final-date").style.display = "block";
+        document.getElementById("add-final-date__btn4").style.display = "none";
+        }
+});
+
+document.getElementById("add-final-date__btn1").addEventListener('click',()=>{
+    dateNeed = new Date();
+    document.getElementById("add-final-date").style.display = "none";
+    document.getElementById("add-final-date__btn4").style.display = "block";
+});
+document.getElementById("add-final-date__btn2").addEventListener('click',()=>{
+    dateNeed = new Date(`${dateNeed.getFullYear()},${dateNeed.getMonth()},${dateNeed.getUTCDate() + 1}`);
+    document.getElementById("add-final-date").style.display = "none";
+    document.getElementById("add-final-date__btn4").style.display = "block";
+    console.log(dateNeed);
+});
+console.log(dateNeed);
+document.getElementById("add-final-date__btn3").addEventListener('click',()=>{
+    document.getElementById("add-final-date").style.display = "none";
+    document.getElementById("add-final-date__btn4").style.display = "block";
+});
+document.getElementById("add-final-date__btn4").addEventListener('click',()=>{
+    document.getElementById("add-final-date").style.display = "none";
+    document.getElementById("add-final-date__btn4").style.display = "none";
 });

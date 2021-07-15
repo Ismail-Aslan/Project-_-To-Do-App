@@ -13,8 +13,8 @@
     <main>
         <header id="heading">
             <div id="menu-bar"><i class="fas fa-bars"></i></div>
-            <h1 id="heading__header">Günüm</h1>
-            <p id="heading__date">14 Temmuz Çarşamba</p>
+            <h1 id="heading__header"></h1>
+            <p id="heading__date"></p>
 
         </header>
 
@@ -33,9 +33,10 @@
                 <i class="fas fa-plus fa-white"></i>
                 <input type="text" name="task" id="task-input">
                 <div id="add-task__div__icons">
-                    <i class="fas fa-clipboard-check fa-white" id="add-task__tasks"> Tasks</i>
-                    <i class="far fa-calendar-alt fa-white" id="add-task__calender"></i>
-                    <i class="far fa-clock fa-white" id="add-task-icon" id="add-task__clock"></i>
+                    <button id="add-task__tasks"><i class="fas fa-clipboard-check fa-white" > Tasks</i></button>
+                    
+                    <button id="add-task__calender"><i class="far fa-calendar-alt fa-white"></i></button>
+                    <button id="add-task__clock"><i class="far fa-clock fa-white" id="add-task-icon"></i></button>
                 </div>
             </div>
         </footer>
@@ -72,6 +73,21 @@
         </div>
         
     </aside>
+
+
+    <div id="add-final-date" class="add-final-date">
+        <button id="add-final-date__btn1" class="add-final-date__btn"><i class="fas fa-calendar-day"></i> Today</button>
+        <button id="add-final-date__btn2" class="add-final-date__btn"><i class="fas fa-calendar-day"></i> Tomorrow</button>
+        <hr>
+        <button id="add-final-date__btn3" class="add-final-date__btn"><i class="far fa-calendar-alt"></i> Chose a date</button>
+        <button id="add-final-date__btn4" class="add-final-date__btn"  style="color: red;"><i class="far fa-times-circle"></i><i class="far fa-trash-alt delete-sth" ></i> Remove date</button>
+    </div>
+
+
+
+
+
+
 
     <script src="app.js"></script>
 </body>

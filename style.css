@@ -173,13 +173,46 @@ main {
     
 }
 
-#add-task__div__icons > i:hover{
+
+
+.fa-white {
+    color: white;
+    font-style: normal;
+}
+
+#add-task__div__icons > button {
+    min-height: 50px;
+    background-color:rgba(0,0,0, 0) ;
+    border: none;
+
+}
+#add-task__div__icons > button:hover{
     
     background-color: rgba(0,0,0, 0.8);
     cursor: pointer;
 }
 
-.fa-white {
-    color: white;
-    font-style: normal;
+.add-final-date {
+    position: absolute;
+    bottom: 5%;
+    right: 15%;
+    background-color: white;
+    min-width: 200px;
+    display: none;
+}
+.add-final-date__btn{
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    margin: 1px 0;
+    height: 30px;
+    border: none;
+    text-align: left;
+    background-color: #fff;
+}
+
+.add-final-date__btn:hover{
+    
+    background-color: rgba(0,0,0, 0.5);
+    cursor: pointer;
 }
