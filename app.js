@@ -134,7 +134,7 @@ const myDayFnk = function () {
     document.getElementsByTagName("main")[0].style.backgroundImage = "linear-gradient(0deg, rgba(231, 253, 254, 1) 0%, rgba(2, 215, 218, 1) 100%)";
 }
 myDay.addEventListener('click',myDayFnk);
-importantSB.addEventListener('click',() => {
+const importantFnk = () => {
     headingHeader.innerText = "Important";
     // console.log(headingHeader.innerText);
     if ( headingHeader.innerText === "Important") {
@@ -144,9 +144,12 @@ importantSB.addEventListener('click',() => {
         asigned.style.backgroundColor = "";
         tasks.style.backgroundColor = "";
     }
-    renderTodos([]);
+    renderTodos(allTasks.filter((x)=>{
+        return x.important;
+    }));
     document.getElementsByTagName("main")[0].style.backgroundImage = "linear-gradient(180deg, rgba(255,0,0,0.7063200280112045) 0%, rgba(255,247,197,0.7931547619047619) 100%)";
-});
+}
+importantSB.addEventListener('click',importantFnk);
 
 const plannedFnk =() => {
     headingHeader.innerText = "Planned";
@@ -314,7 +317,10 @@ function addTodo(item) {
         const todo = {
             id: todoKey,
             name: item,
-            completed: false
+            completed: false,
+            important: false,
+            asignedToMe: false,
+            reminder: ""
         };
 
         allTasks.push(todo);
@@ -340,8 +346,10 @@ function renderTodos(allTasks) {
       // make a <li> element and fill it
       // <li> </li>
       const li = document.createElement('li');
+      let x = 'notImportantTask';
       // <li class="item"> </li>
       li.setAttribute('class', 'item container');
+      
       // <li class="item" data-key="20200708"> </li>
       li.setAttribute('data-key', item.id);
       /* <li class="item" data-key="20200708"> 
@@ -353,12 +361,17 @@ function renderTodos(allTasks) {
       if (item.completed === true) {
         li.classList.add('checked');
       }
-  
+      if (item.important === true) {
+        x = 'importantTask';
+      }
+      
       li.innerHTML = `
         ${item.name}
         <input type="checkbox" class="checkbox" ${checked}>
         <span class="checkmark"></span>
         <button class="delete-button"><i class="far fa-trash-alt delete-sth" ></i></button>
+        <button class="important"><i class="far fa-star  ${x}"></i></button>
+        
         
       `;
 
@@ -383,6 +396,8 @@ function addToLocalStorage(allTasks) {
         plannedFnk();
     } else if (headingHeader.innerText === "Tasks") {
         tasksFnk();
+    }else if (headingHeader.innerText === "Important") {
+        importantFnk();
     } else {
         renderTodos([]);
     }
@@ -436,6 +451,17 @@ function deleteTodo(id) {
 
   // initially get everything from localStorage
 getFromLocalStorage();
+function makeImportant(id) {
+    allTasks.forEach(function(item) {
+        // use == not ===, because here types are different. One is number and other is string
+        if (item.id == id) {
+          // toggle the value
+          item.important = !item.important;
+        }
+    });
+    
+    addToLocalStorage(allTasks);
+}
 
 // after that addEventListener <ul> with class=todoItems. Because we need to listen for click event in all delete-button and checkbox
 todoItemsList.addEventListener('click', function(event) {
@@ -450,6 +476,10 @@ todoItemsList.addEventListener('click', function(event) {
     if (event.target.classList.contains('delete-sth')) {
       // get id from data-key attribute's value of parent <li> where the delete-button is present
       deleteTodo(event.target.parentElement.parentElement.getAttribute('data-key'));
+    }
+    if (event.target.classList.contains('fa-star')) {
+      // get id from data-key attribute's value of parent <li> where the delete-button is present
+      makeImportant(event.target.parentElement.parentElement.getAttribute('data-key'));
     }
   });
 

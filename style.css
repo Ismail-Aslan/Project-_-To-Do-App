@@ -91,10 +91,7 @@ h1 {
 }
 
 /* Main section */
-main {
-    /* background: rgb(231, 253, 254);
-    background: linear-gradient(0deg, rgba(231, 253, 254, 1) 0%, rgba(2, 215, 218, 1) 100%); */
-}
+
 
 /* Main header */
 #heading {
@@ -130,22 +127,28 @@ main {
 
 }
 
-.delete-sth {
-
+.delete-sth{
     color: rgba(0, 0, 0, 0.7);
-
-
-
     font-size: 1.1rem;
     font-weight: 550;
 }
 
+.important i:hover,
 .delete-sth:hover {
     cursor: pointer;
     color: red;
 }
 
-
+.importantTask{
+    color: red;
+    font-size: 1.1rem;
+    font-weight: 550;
+}
+.notImportantTask{
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 1.1rem;
+    font-weight: 550;
+}
 
 
 
@@ -300,7 +303,8 @@ main {
     margin-right: 10px;
 }
 
-.delete-button {
+.delete-button,
+.important {
     float: right;
     border: none;
     outline: none;
