@@ -6,7 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My To-Do App</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="calendar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital@1&display=swap" rel="stylesheet">  
 
 </head>
 <body>
@@ -21,9 +25,17 @@
         
 
         <article id="main-list">
-            <div class="task"><i class="far fa-circle"></i> Deneme Lorem ipsum dolor sit amet.<i class="far fa-trash-alt delete-sth" ></i></div>
-            
+            <!-- <div class="task"><i class="far fa-circle"></i> Deneme Lorem ipsum dolor sit amet.<i class="far fa-trash-alt delete-sth" ></i></div> -->
+            <ul class="todo-items">
+                <!-- dummy item -->
+                <li class="item" data-key="1594003133171">
+                  <input class="checkbox" type="checkbox">
+                  Go to Gym
+                  <button class="delete-button">X</button>
+                </li>
+            </ul>
         </article>
+        
 
 
 
@@ -31,11 +43,10 @@
         <footer id="add-task">
             <div id="add-task__div">
                 <i class="fas fa-plus fa-white"></i>
-                <input type="text" name="task" id="task-input">
+                <input type="text" name="task" id="task-input" placeholder="Add new task">
                 <div id="add-task__div__icons">
-                    <button id="add-task__tasks"><i class="fas fa-clipboard-check fa-white" > Tasks</i></button>
                     
-                    <button id="add-task__calender"><i class="far fa-calendar-alt fa-white"></i></button>
+                    <button id="add-task__tasks"><i class="far fa-calendar-alt fa-white"></i></button>
                     <button id="add-task__clock"><i class="far fa-clock fa-white" id="add-task-icon"></i></button>
                 </div>
             </div>
@@ -79,8 +90,10 @@
         <button id="add-final-date__btn1" class="add-final-date__btn"><i class="fas fa-calendar-day"></i> Today</button>
         <button id="add-final-date__btn2" class="add-final-date__btn"><i class="fas fa-calendar-day"></i> Tomorrow</button>
         <hr>
-        <button id="add-final-date__btn3" class="add-final-date__btn"><i class="far fa-calendar-alt"></i> Chose a date</button>
-        <button id="add-final-date__btn4" class="add-final-date__btn"  style="color: red;"><i class="far fa-times-circle"></i><i class="far fa-trash-alt delete-sth" ></i> Remove date</button>
+        <button id="add-final-date__btn3" class="add-final-date__btn"><i class="far fa-calendar-alt"></i> Choose a date<input type="date"  id="calendar-input"></button>
+        <button id="add-final-date__btn4" class="add-final-date__btn"  style="color: red;">
+            <i class="far fa-times-circle"></i> Remove date
+        </button>
     </div>
 
 

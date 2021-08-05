@@ -1,48 +1,53 @@
 * {
     box-sizing: border-box;
+    font-family: 'Mulish', sans-serif;
 }
+
 body {
     display: grid;
     grid-template-columns: minmax(max-content, 2fr) 7fr;
     grid-template-rows: 100%;
-    grid-template-areas: 
-    "aside main";
-    
+    grid-template-areas:
+        "aside main";
+
     margin: 0%;
 }
-aside{
-    
+
+aside {
+
     grid-area: aside;
     width: 100%;
-    
+
     height: 100vh;
     background-color: snow;
-    border:1px solid rgba(128, 128, 128, 0.308)
+    border: 1px solid rgba(128, 128, 128, 0.308)
 }
+
 main {
     grid-area: main;
     width: 100%;
     height: 100vh;
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 20% 70% 10%;
-    grid-template-areas: 
-    "header"
-    "article"
-    "footer";
+    grid-template-rows: 20% 68% 12%;
+    grid-template-areas:
+        "header"
+        "article"
+        "footer";
 }
-h3{
+
+h3 {
     width: 100%;
     color: rgba(3, 3, 3, 0.829);
 }
 
 #menu {
-    
+
     float: right;
     margin-top: 0.2rem;
-    margin-right: 5%;
+    margin-right: 5px;
     border-radius: 15%;
-    background-color: rgba(128, 128, 128,0.5);
+    background-color: rgba(128, 128, 128, 0.5);
 
     padding: 3px 7px;
 }
@@ -51,38 +56,44 @@ h3{
     margin-left: 5px;
     padding: 0.5%;
 }
+
 .sidebar-item:hover,
 .fa-bars:hover {
     background-color: rgba(169, 169, 169, 0.233);
     cursor: pointer;
 }
 
-#sidebar-heading,h1{
+#sidebar-heading,
+h1 {
     padding: 0%;
     margin: 0%;
-    
-}
-.fa-sun{
-    color:goldenrod;
+
 }
 
-.fa-star{
+.fa-sun {
+    color: goldenrod;
+}
+
+.fa-star {
     color: red;
 }
-.fa-calendar--colored{
+
+.fa-calendar--colored {
     color: blue;
 }
-.fa-user-tag{
+
+.fa-user-tag {
     color: olivedrab;
 }
-.fa-clipboard-check--colored{
+
+.fa-clipboard-check--colored {
     color: green;
 }
 
 /* Main section */
 main {
-    background: rgb(231,253,254);
-    background: linear-gradient(0deg, rgba(231,253,254,1) 0%, rgba(2,215,218,1) 100%);
+    /* background: rgb(231, 253, 254);
+    background: linear-gradient(0deg, rgba(231, 253, 254, 1) 0%, rgba(2, 215, 218, 1) 100%); */
 }
 
 /* Main header */
@@ -91,44 +102,45 @@ main {
     background-color: rgba(56, 113, 136, 0.103);
     height: 8rem;
 }
-#menu-bar{
-    margin: 5px 5%;
+
+#menu-bar {
+    margin: 5px 20px;
     margin-right: 5%;
     border-radius: 15%;
-    background-color: rgba(128, 128, 128,0.5);
+    background-color: rgba(128, 128, 128, 0.5);
     width: min-content;
     padding: 3px 7px;
     display: none;
 }
 
 #heading__header {
-    margin: 1.5rem 5% 0.5rem 5%;
+    margin: 1.5rem 20px 0.5rem 20px;
 }
-#heading__date{
-    margin: 0.5rem 5%;
+
+#heading__date {
+    margin: 0.5rem 20px;
 }
 
 
 /* Main article */
 #main-list {
-    grid-area: article;  
+    grid-area: article;
     overflow: auto;
-  
-}
-.task {
-    
-    margin: 0.3rem 5%;
-    width: 90%;
-    padding: 0.4rem;
-    background-color: white;
-    border-radius: 5px;
-}
-.delete-sth{
-    float: right; 
-    color: rgba(0, 0, 0,0.7);
+    /* width: 100%; */
+
 }
 
-.delete-sth:hover{
+.delete-sth {
+
+    color: rgba(0, 0, 0, 0.7);
+
+
+
+    font-size: 1.1rem;
+    font-weight: 550;
+}
+
+.delete-sth:hover {
     cursor: pointer;
     color: red;
 }
@@ -142,35 +154,58 @@ main {
 
 #add-task {
     grid-area: footer;
-    
+
 }
-#add-task__div{
+
+#add-task__div {
     margin: 10px auto;
     width: 80%;
-    background-color: rgba(0,0,0, 0.527);
-    padding: 0 0 0 8px  ;
+    background-color: rgba(0, 0, 0, 0.527);
+    padding: 0 0 0 8px;
     max-height: min-content;
     border-radius: 5px;
+    font-size: 1.1rem;
 }
-#task-input{
+
+#task-input {
     border: none;
-    background-color: rgba(0,0,0, 0);
+    background-color: rgba(0, 0, 0, 0);
     width: 60%;
     outline: none;
     min-height: 50px;
-    
+    color: white;
+    font-size: 1.1rem;
+
 }
-#add-task__div__icons{
+
+#task-input::placeholder {
+    color: white;
+    opacity: 1;
+    /* Firefox */
+}
+
+#task-input:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: white;
+}
+
+#task-input::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: white;
+}
+
+#add-task__div__icons {
     float: right;
     margin: 0%;
-    padding:0%;
+    padding: 0%;
     width: max-content;
 }
-#add-task__div__icons > i{
-    padding: 16px 5px ;
+
+#add-task__div__icons>i {
+    padding: 16px 5px;
     align-self: center;
     min-height: 50px;
-    
+
 }
 
 
@@ -178,17 +213,19 @@ main {
 .fa-white {
     color: white;
     font-style: normal;
+    font-size: 1.1rem;
 }
 
-#add-task__div__icons > button {
+#add-task__div__icons>button {
     min-height: 50px;
-    background-color:rgba(0,0,0, 0) ;
+    background-color: rgba(0, 0, 0, 0);
     border: none;
 
 }
-#add-task__div__icons > button:hover{
-    
-    background-color: rgba(0,0,0, 0.8);
+
+#add-task__div__icons>button:hover {
+
+    background-color: rgba(0, 0, 0, 0.8);
     cursor: pointer;
 }
 
@@ -200,7 +237,8 @@ main {
     min-width: 200px;
     display: none;
 }
-.add-final-date__btn{
+
+.add-final-date__btn {
     display: block;
     width: 100%;
     max-width: 200px;
@@ -211,8 +249,141 @@ main {
     background-color: #fff;
 }
 
-.add-final-date__btn:hover{
-    
-    background-color: rgba(0,0,0, 0.5);
+.add-final-date__btn:hover {
+
+    background-color: rgba(0, 0, 0, 0.5);
     cursor: pointer;
+}
+
+#add-final-date__btn3 {
+    position: relative;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* todo-items */
+.todo-items {
+    min-width: 290px;
+    padding-inline-start: 0%;
+    margin: 20px;
+}
+
+/* each li with class="item" */
+.item {
+    background-color: #fff;
+    padding: 10px;
+    font-size: 1.1rem;
+}
+
+.item:first-child {
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+}
+
+.item:last-child {
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+}
+
+/* item style end */
+
+.checkbox {
+    margin-right: 10px;
+}
+
+.delete-button {
+    float: right;
+    border: none;
+    outline: none;
+    border-radius: 7px;
+    margin-left: 10px;
+    padding: 5px 5px;
+}
+
+/* applied when the todo item is checked */
+.checked {
+    text-decoration: line-through;
+}
+
+/* todo-items style ends */
+
+
+
+
+/* The container */
+.container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 10px;
+    left: 5px;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 20px;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input~.checkmark {
+    background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked~.checkmark {
+    background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked~.checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
 }
